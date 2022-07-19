@@ -12,7 +12,7 @@ body{
     align-items: center;
     text-align: center;
     background: #9e9ea0;
-    margin: 10px auto;
+    margin: 15px auto;
     padding: 5px 30px;
     width: 800px;
     box-shadow: 0 0 5px black;
@@ -24,7 +24,7 @@ body{
   }
 
   hr {
-    width: 30px;
+    width: 50px;
     height: 1px;
     background: black;
     margin: 0 15px;
