@@ -10,10 +10,16 @@
     <span class="text-center">
       <h1>Please Login</h1>
     </span>
+
+    <% if(messages.length > 0) {%>
+      <div class="alert alert-danger">
+          <%= messages %>
+      </div>
+  <% } %>
+
     <div class="row">
   
-      <form class="col col-lg-8 col-md-12 col-sm-12" autocomplete='off' #form='ngForm' (ngSubmit)='authenticate(form)'
-        #loginForm="ngForm">
+      <form class="col col-lg-8 col-md-12 col-sm-12" method="POST" autocomplete="off" >
         <fieldset class="form-group">
   
           <label for="username" [ngStyle]="{'visibility': user.username? 'visible':'hidden'}">Username:</label>

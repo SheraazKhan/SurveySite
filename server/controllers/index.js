@@ -3,6 +3,10 @@ let router = express.Router();
 let mongoose = require('mongoose');
 let passport = require('passport');
 
+// enable jwt
+let jwt = require('jsonwebtoken');
+let DB = require('../config/db');
+
 //create the User Model
 let userModel = require('../models/user');
 let User = userModel.User;
@@ -19,6 +23,52 @@ module.exports.displayContactPage = (req, res, next) => {
     res.render('contact', {title: 'Contact us'});
 }
 
+module.exports.displayLoginPage = (req, res, next) => {
+    //check if user is already logged in
+    if(!req.user) 
+{
+    res.render('auth/login', 
+    {title: 'Please Log In',
+     messages: req.flash('loginMessage'),
+     displayName: req.user ? req.user.displayName : ''});
+    
+}
+else
+{
+    return res.redirect('/');
+}
+}
+module.exports.processLoginPage = (req, res, next) => {
+    passport.authenticate('local',
+    (err, user, info) =>  {
+        // server error
+        if(err)
+        {
+            return next(err);
+        }
+        // wrong username or password
+        if(!user)
+        {
+            req.flash('loginMessage', "Oops! Wrong username or password.");
+            return res.redirect('/login');
+        }
+        // successful login
+        req.logIn(user, (err) => {
+            // server error
+            if(err)
+            {
+                return next(err);
+            }
+            // redirect to the user's profile page
+            return res.redirect('/survey-app');
+        }
+        );
+        
+    });
+    (req, res, next);
+    
+}
+
 module.exports.displayRegisterPage = (req, res, next) => {
    // check if user is already logged in
     if(!req.user)
@@ -32,7 +82,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
 }
 else
 {
-    return res.redirect('/');
+    return res.redirect('/register');
 }
 }
 //process register page
@@ -69,7 +119,7 @@ module.exports.processRegisterPage = (req, res, next) => {
         {
               // if no error
                 // redirect the user and authenticate
-                passport.authenticate('local')(req, res, () => {
+                return passport.authenticate('local')(req, res, () => {
                     res.redirect('/survey-app');
                 }
             );
@@ -77,51 +127,7 @@ module.exports.processRegisterPage = (req, res, next) => {
     });
 }
 
-module.exports.displayLoginPage = (req, res, next) => {
-    //check if user is already logged in
-    if(!req.user) 
-{
-    res.render('auth/login', 
-    {title: 'Please Log In',
-     messages: req.flash('loginMessage'),
-     displayName: req.user ? req.user.displayName : ''});
-    
-}
-else
-{
-    return res.redirect('/');
-}
-}
-module.exports.processLoginPage = (req, res, next) => {
-    passport.authenticate('local',
-    (err, user, info) =>  {
-        // server error
-        if(err)
-        {
-            return next(err);
-        }
-        // wrong username or password
-        if(!user)
-        {
-            req.flash('loginMessage', info.message);
-            return res.redirect('/login');
-        }
-        // successful login
-        req.logIn(user, (err) => {
-            // server error
-            if(err)
-            {
-                return next(err);
-            }
-            // redirect to the user's profile page
-            return res.redirect('/');
-        }
-        );
-        
-    });
-    (req, res, next);
-    
-}
+
 module.exports.performLogout = (req, res, next) => {
     req.logout();
     res.redirect('/');
