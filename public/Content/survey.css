@@ -34,13 +34,12 @@ a {
   .survey {
     width: 80%;
     margin: 20px auto;
-    background: transparent;
-    color: ghostwhite;
+    background: none;
+    color: white;
     height: 300px;
     border-radius: 10px;
     box-shadow: 1px 1px 7px;
   }
-
   .survey h4 {
     text-align: center;
     font-size: 30px;
@@ -59,7 +58,7 @@ a {
   }
   
   .end {
-    background: #149DFA;
+    background: rgb(92, 92, 95);
     color: ghostwhite;
     width: 50%;
     margin: 25% auto;

@@ -29,8 +29,6 @@ let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
 let surveyRouter = require('../routes/survey');
 
-
-
 let app = express();
 
 // view engine setup
@@ -44,33 +42,32 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-//setup express session
+//setup expression sessions
 app.use(session({
   secret: "SomeSecret",
-  saveUninitialized: false,
+saveUnintialized: false,
   resave: false
-}));
+}))
 
-//initalize flash
+//initialize flash
 app.use(flash());
 
 //initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
 
-// passport User config
+//passport user configuration
 
-// create a user model instance
-let userModel = require('../models/user');
-let User = userModel.User;
+// create a user Model Instance
+let userModel= require('../models/user');
+let User=userModel.User;
 
 // implement a user Authentication Strategy
 passport.use(User.createStrategy());
 
-// serialize and deserialize the User info
+//serialize and deserialize user info
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
