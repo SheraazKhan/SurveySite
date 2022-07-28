@@ -21,7 +21,7 @@ module.exports.displaySurveyList = (req, res, next) => {
 
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('survey/add', {title: 'Survey Question'});
+    res.render('survey/add', {title: 'Create New Survey'});
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -98,4 +98,3 @@ module.exports.performDelete =  (req, res, next) => {
        }
     });
 }
-

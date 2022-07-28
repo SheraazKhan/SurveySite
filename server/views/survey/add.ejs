@@ -8,7 +8,21 @@
     <div class="wrapper">
        <div class="offset -md-3 col-md-6">
         <h1><%= title %></h1>
-        <p>Enter valid information about yorself and fill out the survey</p>
+        <div><h6>survey information</h6></div>
+        <div><label for="start">Start date:</label>
+
+            <input type="date" id="start" name="trip-start"
+            value="YYYY-MM-DD"
+            min="2022-01-01" max="2025-12-31"></div>
+
+
+        <div><label for="end">End date:</label>
+
+            <input type="date" id="end" name="trip-end"
+            value="YYYY-MM-DD"
+            min="2022-01-01" max="2025-12-31"></div>
+        
+       
      <br>
 
        </div>
@@ -17,7 +31,7 @@
 
     <div class="wrapper">
       <form class="form" method="POST">
-
+        <p>Enter valid information about yorself and fill out the survey</p>
             <div class="form-group">
                 <label for="nameTextField"></label>
                 <input type="text" class="form-control"
@@ -37,79 +51,197 @@
 
             <div class="form-group">
                 <label for="ageTextField"></label>
-                <input type="age" class="form-control"
+                <input type="number" name = "age" min="10" max="99" class="form-control"
                 id="ageTextField"
                 placeholder="Enter Your Age"
                 name="age" 
                 required>
             </div>
 
+            <div class="form-group">
+                <label for="dropdown">
+                    <p>Describe your role?</p>
+                </label>
+                <select class="form-control" id="dropdown" name="dropdown" required>
+                    <option disabled> Select role </option>
+                    <option value="student">Student</option>
+                    <option value="full">Full-Time Job </option>
+                    <option value="part">Part-Time Job</option>
+                    <option value="other">Other</option>
+                </select>
+
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                
+            </div>
+
+            <div class="survey">
+
+                <p>Please select an option</p>
+                <div class="choice">
+
+                    <ul class="opt1">
+                        <li>Multiple Choice</li>
+                     </ul>
+                  
+                </div>
+
+                
+               
+                 <div class="question1">
+                       <h4>Question 1</h4>
+
+                       <label for="firstoption"></label>
+                       <input type="text" class="form-control"
+                       id="optionfield"
+                       placeholder="Your question"
+                       name="" required>
+
+                       <label for="secondoption"></label>
+                       <input type="text" class="form-control"
+                       id="optionfield"
+                       placeholder="Option 1"
+                       name="" required> 
+
+                        <label for="thirdoption"></label>
+                        <input type="text" class="form-control"
+                        id="optionfield"
+                        placeholder="Option 2"
+                        name="" required>
+
+                        <label for="thirdoption"></label>
+                        <input type="text" class="form-control"
+                        id="optionfield"
+                        placeholder="Option 3"
+                        name="" required>
+
+                        <ul class="option1">
+                            <li>Next</li>
+
+                 </div>   
+               
+                        
+               
+                   <div class="question2">
+                       
+                       <h2>Question 2</h2>
+
+                       <label for="firstoption"></label>
+                       <input type="text" class="form-control"
+                       id="optionfield"
+                       placeholder="Your question"
+                       name="" required>
+
+                       <label for="secondoption"></label>
+                       <input type="text" class="form-control"
+                       id="optionfield"
+                       placeholder="Option 1"
+                       name="" required>
+
+                        <label for="thirdoption"></label>
+                        <input type="text" class="form-control"
+                        id="optionfield"
+                        placeholder="Option 2"
+                        name="" required>
+
+                        <label for="thirdoption"></label>
+                        <input type="text" class="form-control"
+                        id="optionfield"
+                        placeholder="Option 3"
+                        name="" required>
+
+                        <ul class="option1">
+                       <ul class="option2">
+                           <li>Next</li>
+                         
+
+                       </ul>
+                   </div>  
+
+                    <div class="question3">
+                           <h2>Question 3</h2>
+
+                           <label for="firstoption"></label>
+                           <input type="text" class="form-control"
+                           id="optionfield"
+                           placeholder="Your question"
+                           name="" required>
+    
+                           <label for="secondoption"></label>
+                           <input type="text" class="form-control"
+                           id="optionfield"
+                           placeholder="Option 1"
+                           name="" required>
+    
+                            <label for="thirdoption"></label>
+                            <input type="text" class="form-control"
+                            id="optionfield"
+                            placeholder="Option 2"
+                            name="" required>
+    
+                            <label for="thirdoption"></label>
+                            <input type="text" class="form-control"
+                            id="optionfield"
+                            placeholder="Option 3"
+                            name="" required>
+                         <ul class="option1">
+                           <ul class="option3">
+                               <li>last </li>
+                              
+                           </ul>
+                       </div>
+
+
+                     <div class="choice2">
+                        <ul class="opt2">
+                            <li>Short Answers</li>
+                        </ul>
+                     </div>
+
+                     <div class="ans">
+                        <label for="yourquestion"></label>
+                        <input type="text" class="form-control"
+                        id="optionfield"
+                        placeholder="Your question Here"
+                        name="" required>
+ 
+                        <label for="participant"></label>
+                        <input type="text" class="form-control"
+                        id="optionfield"
+                        placeholder="Participant's answer"
+                        name="" required> 
+                     </div>
+
+
+    
+
+                </div>
+
+               <div class="end">
+                   <h2>Thank you</h2>
+                   <a href="/home"><i class="fas fa-chevron-circle-right"></i> home</a>
+
+               </div>
+           </form>
+           </div>
+
+           
+
      </div>
 
-            <div class="wrapper">
+                      <div class="wrapper">
 
-                <hr>
-                <p>multiple choice questions</p>
-                   <hr>
-                   <p>create your own survey</p>
-       
-                       <div class="survey">
-                         <div class="question1">
-                               <h4>How likely are you to recommend us?</h4>
-       
-                            <ul class="option1">
-                               <li>Extremely likely</li>
-                               <li>Very likely</li>
-                               <li>Neutral</li>   
-                               <li>Somewhat unlikely</li>
-                               <li>Extremely unlikely</li> 
-                            </ul>
-                        </div>                
-                       
-                           <div class="question2">
-                               
-                               <h2>Who did you make a purchase for?</h2>
-       
-                               <ul class="option2">
-                                   <li>Self</li>
-                                   <li>Family Member</li>    
-                                   <li> Business</li>
-                                   <li>Friend</li>
-                                   <li>Other</li>
-       
-                               </ul>
-                           </div>  
-       
-                            <div class="question3">
-                                   <h2>How many times have you visited our website in the past month?</h2>
-       
-                                   <ul class="option3">
-                                       <li>None</li>
-                                       <li>Once</li>    
-                                       <li>Weekly</li>
-                                       <li>Monthly</li>
-                                       <li>Only when purchase is required</li>
-                                   </ul>
-                               </div>
-       
-                        </div>
-       
-                       <div class="end">
-                           <h2>Thank you</h2>
-                           <a href="/home"><i class="fas fa-chevron-circle-right"></i> home</a>
-       
-                       </div>
-                   
-                     <br><hr>
-       <div class="wrapper">
                        <button class="btn btn-primary" type="submit">
                            <i class="fas fa-paper-plane"></i> Submit</button>
-                       
+                       <br>
                            <a href="/survey-app" class="btn btn-warning">
                                <i class="fas fa-undo"></i> Cancel</a>
-                            </div>
+                       </div>
     </form>
-            </div>
+            
 
 </div>
 
