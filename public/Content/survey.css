@@ -36,7 +36,11 @@ a {
     margin: 20px auto;
     background: none;
     color: white;
+<<<<<<< HEAD
     height: auto;
+=======
+    height: 300px;
+>>>>>>> af0df794d225264c97ce50743614546369236b98
     border-radius: 10px;
     box-shadow: 1px 1px 7px;
   }
