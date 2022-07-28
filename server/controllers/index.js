@@ -67,6 +67,7 @@ module.exports.processLoginPage = (req, res, next) => {
 }
 module.exports.displayRegisterPage = (req, res, next) => {
     // check if the user is not already logged in
+    console.log(res);
     if(!req.user)
     {
         res.render('auth/register',
@@ -78,7 +79,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
     }
     else
     {
-        return res.redirect('/register');
+        return res.redirect('/login');
     }
 }
 
