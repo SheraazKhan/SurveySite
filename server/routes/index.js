@@ -34,6 +34,12 @@ router.get('/register', indexController.displayRegisterPage);
 router.post('/register', indexController.processRegisterPage);
 
 /* POST Route for processing the Login page -  */
+<<<<<<< HEAD
+=======
+router.post('/login',indexController.processLoginPage);
+
+/* GET Route for processing the Login page -  */
+>>>>>>> 9642a53c32939210d600d17a185730289a8418a7
 router.get('/logout',indexController.performLogout);
 
 
