@@ -7,6 +7,13 @@
   
 
   <!-- Main Content -->
+  <main >
+    <% if(messages.length > 0) {%>
+      <div class="alert alert-danger">
+          <%= messages %>
+      </div>
+  <% } %>
+
   <div class="box-form">
     <div class="left">
         <div class="overlay">
@@ -16,26 +23,38 @@
             </p>
         </div>
     </div>
+
     <div class="right">
-     <h5>Login or register</h5>  
-     <p>Create or login to your account</p> 
-     <div class="input">
-        <input type="text" placeholder="username">
-        <br>
-        <br>
-        <input type="password" placeholder="password">
-     </div>
-     <br>
-     <hr>
-     <br>
-    <button><a href="/login">Login</a></button> 
-    
-    <button><a href="/register">Register</a></button> 
-    </div>
-</div>
+        <h5>Login or register</h5>  
+        <p>Create or login to your account</p> 
+      <form method="POST" autocomplete="off" >
+       <div class="input">
+          <label for="username" [ngStyle]="{'visibility': user.username? 'visible':'hidden'}">Username:</label>
   
-<div>
-    <br>
+          <input type="text"
+                    name="username" 
+                    id="username" required autofocus>
+        </fieldset>
+  
+        <fieldset >
+          <label for="password" >Password:</label>
+          <input type="password"
+          name="password" 
+          id="password" required>
+            
+        </div>
+             <fieldset class="form-group text-right">
+              <input type="submit" class="btn btn-success" value="Login">
+              <a href="/register">
+                  <input type="button" class="btn btn-warning" value="Register">
+              </a>
+          </fieldset>
+      </form>
+  
+    
+  
+    </div>
+  </main>
 
  <!--footer Section-->
  <%- include partials/footer.ejs  %>
@@ -43,7 +62,6 @@
   <!--Script Section-->
 
 <%- include partials/scripts.ejs  %>
-
 
 
 

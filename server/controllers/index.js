@@ -13,23 +13,24 @@ let User = userModel.User; // alias
 
 
 module.exports.displayHomePage = (req, res, next) => {
-    res.render('index', {title: 'Home'});
+    res.render('index', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayAboutPage = (req, res, next) => {
-    res.render('about', {title: 'About'});
+    res.render('about', {title: 'About', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.displayContactPage = (req, res, next) => {
-    res.render('contact', {title: 'Contact us'});
+    res.render('contact', {title: 'Contact us', displayName: req.user ? req.user.displayName : ''});
 }
 
 
 module.exports.displayLoginPage = (req, res, next) => {
+    
     // check if the user is already logged in
     if(!req.user)
     {
-        res.render('auth/login', 
+        res.render('index', 
         {
            title: "Login",
            messages: req.flash('loginMessage'),
@@ -53,7 +54,7 @@ module.exports.processLoginPage = (req, res, next) => {
         if(!user)
         {
             req.flash('loginMessage', 'Authentication Error');
-            return res.redirect('/login');
+            return res.redirect('/index');
         }
         req.login(user, (err) => {
             // server error?
@@ -67,6 +68,7 @@ module.exports.processLoginPage = (req, res, next) => {
 }
 module.exports.displayRegisterPage = (req, res, next) => {
     // check if the user is not already logged in
+    console.log(res);
     if(!req.user)
     {
         res.render('auth/register',
@@ -78,7 +80,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
     }
     else
     {
-        return res.redirect('/register');
+        return res.redirect('/login');
     }
 }
 
@@ -113,7 +115,7 @@ module.exports.processRegisterPage = (req, res, next) => {
         else
         {
             // if no error exists, then registration is successful
-
+    
             // redirect the user and authenticate them
 
             /* TODO - Getting Ready to convert to API
@@ -128,7 +130,8 @@ module.exports.processRegisterPage = (req, res, next) => {
 }
 
 module.exports.performLogout = (req, res, next) => {
-    req.logout();
-    res.redirect('/');
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+      });
 }
-

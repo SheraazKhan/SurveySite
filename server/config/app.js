@@ -45,9 +45,9 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 //setup expression sessions
 app.use(session({
   secret: "SomeSecret",
-saveUnintialized: false,
+  saveUninitialized: false,
   resave: false
-}))
+}));
 
 //initialize flash
 app.use(flash());
