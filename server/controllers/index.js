@@ -79,7 +79,7 @@ module.exports.displayRegisterPage = (req, res, next) => {
     }
     else
     {
-        return res.redirect('/register');
+        return res.redirect('/login');
     }
 }
 
