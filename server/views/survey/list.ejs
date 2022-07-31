@@ -9,8 +9,11 @@
         <div class="offset-md-1 col-md-11">
             <br>
             <h1><%= title %></h1>
+            <% if(typeof displayName == 'string' && displayName) { %>
+         
             <a href="/survey-app/add" class="btn btn-outline-dark" role="button">
             <i class="fas fa-plus-circle"></i> Create Your Survey </a>
+            <% } %>
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
                 <tr class="d-flex">
@@ -18,8 +21,8 @@
                     <th class="text-center col-3">Email</th>
                     <th class="text-center col-3">Age</th>
                     
-                    <th class="text-center col-1"></th>
-                    <th class="text-center col-1"></th>
+                    <!-- <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th> -->
                 </tr>
 
                 <!-- Repeatable Template Row -->
@@ -30,7 +33,6 @@
                         <td class="text-center col-3"><%= SurveyList[count].email %></td>
                         <td class="text-center col-3"><%= SurveyList[count].age %></td>
                         <br>
-                        <hr>
                         <td class="text-center col-1">
                             <a href="/survey-app/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i> Edit</a>
@@ -38,6 +40,10 @@
                         <td class="text-center col-1">
                             <a href="/survey-app/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i> Delete</a>
+                        </td>
+                        <td class="text-center col-1">
+                            <a href="" class="btn btn-success btn-sm">
+                            <i class="fas fa-plus"></i> Take Survey</a>
                         </td>
                     </tr>
                 <% } %>
@@ -49,10 +55,7 @@
 
   
   
-<%- include ../partials/footer.ejs %>  
 
-<%- include ../partials/scripts.ejs %>
-  
 
 
 

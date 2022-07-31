@@ -14,14 +14,17 @@ module.exports.displaySurveyList = (req, res, next) => {
         else
         {
             //console.log(survey);
-            res.render('survey/list', {title: 'Questions', SurveyList: surveyList})
+            res.render('survey/list', 
+            {title: 'Questions', SurveyList: surveyList, 
+            displayName: req.user ? req.user.displayName : ''});
         }
     });
 }
 
 
 module.exports.displayAddPage = (req, res, next) => {
-    res.render('survey/add', {title: 'Create New Survey'});
+    res.render('survey/add', {title: 'Create New Survey',
+    displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.processAddPage = (req, res, next) => {
@@ -55,7 +58,10 @@ module.exports.displayEditPage = (req, res, next) => {
         }
         else
         {
-            res.render('survey/edit', {title: 'Edit Survey Information', survey: surveyToEdit})
+            res.render('survey/edit', 
+            {title: 'Edit Survey Information', 
+            survey: surveyToEdit,
+            displayName: req.user ? req.user.displayName : ''})
         }
     });
 }
