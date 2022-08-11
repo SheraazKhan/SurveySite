@@ -1,0 +1,168 @@
+body {
+    font-family: 'Anaheim';
+    font-size: 1.2em;
+}
+
+#outside {
+    background-color: #dfe8f7;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: center;
+    text-transform: capitalize;
+    color: black;
+}
+.nav-links{
+	flex: 4;
+	text-align: left;
+        display: inline-block;
+}
+.nav-links ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 20px 5px;
+	position: relative;
+        height: 2px
+        
+}
+.nav-links ul li a{
+	color: #262663;
+	text-decoration: none;
+	font-size: 20px;
+}
+.nav-links ul li::after{
+	content: '';
+	width: 0%;
+	height: 3px;
+	background: #C70039;
+	display: block;
+	margin: auto;
+        transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+	width: 100%;
+}
+
+form {
+    /* Just to center the form on the page */
+    margin: 0 auto;
+    width: 70%;
+    /* To see the limits of the form */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
+
+#survey-form {
+    background-color: #bfd3f5;
+}
+
+fieldset {
+    border: 1px solid black;
+    margin: 7px;
+}
+legend {
+    font-weight: 700;
+    margin: 10px;
+}
+
+#number {
+    width: 150px;
+}
+
+
+div + div {
+    margin-top: 1em;
+}
+
+/* label {
+  /* To make sure that all label have the same size and are properly align */
+/* display: inline-block; */
+/* width: 80px; */
+/* text-align: right; */
+
+
+*/
+
+input, textarea {
+    /* To make sure that all text field have the same font settings
+     By default, textarea are set with a monospace font */
+    /* font: 1em sans-serif; */
+    /* To give the same size to all text field */
+    width: 200px;
+    /*   -moz-box-sizing: border-box;
+       box-sizing: border-box; */
+    /* To harmonize the look & feel of text field border */
+    border: 1px solid #999;
+}
+
+    input:focus, textarea:focus {
+        /* To give a little highligh on active elements */
+        border-color: OrangeRed;
+    }
+
+textarea {
+    /* To properly align multiline text field with their label */
+    vertical-align: top;
+    /* To give enough room to type some text */
+    height: 5em;
+    /* To allow users to resize any textarea vertically
+     It works only on Chrome, Firefox and Safari */
+    resize: vertical;
+}
+
+.button {
+    /* To position the buttons to the same position of the text fields */
+    padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+    margin: .5em;
+    font-size: 1em;
+    text-transform: capitalize;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 2px;
+}
+.icon {
+    display: inline-flex;
+    height: 0px;
+    padding: 0;
+    color: black;
+    background-color: none;
+    width: 70%;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.question {
+    text-align: left;
+    padding: 0%;
+    display: inlife-flex;
+}
+.question-frame textarea{
+    width: 250px;
+    height: 20px;
+}
+.choice button {
+    padding: 0px;
+    background-color: #646484;
+}
+.new-question button {
+    padding: 0px;
+    background-color: #646484;
+}
+
+#submitbutton {
+    display: flex;
+    justify-content: center;
+}
+#new{
+    font-size: larger;
+    font-variant: aquamarine;
+}

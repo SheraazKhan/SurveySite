@@ -1,222 +1,97 @@
-<%- include ../partials/surveyheader.ejs %>
+<%- include ../partials/addsurvey.ejs %>
 
 <%- include ../partials/navbar.ejs %>
+<!DOCTYPE html>
 
-<!-- Content for the Add page -->
-
-<div class="container">
-    <div class="wrapper">
-       <div class="offset -md-3 col-md-6">
-        <h1><%= title %></h1>
-        <div><h6>survey information</h6></div>
-        <p>Enter valid information to create a survey</p>
-        
-        <div>
-            <label for="name">Name of Survey</label>
-            <input type="text" class="form-control"
-            id="name"
-            placeholder="Enter Name of Survey"
-            name="name" required>
-        </div>
-
-        <div>
-            <label for="description">Description</label>
-            <textarea type="text" class="form-control"
-            id="description"
-            name="description" required></textarea>
-        </div>
-
-        <div>
-            <label for="created">Created on:</label>
-            <input type="date" class="form-control"
-            id="created"
-            placeholder="" value="YYYY-MM-DD"
-            name="created" required>
-        </div>
-
-        <div>
-            <label for="expires">Expires on:</label>
-            <input type="date" class="form-control"
-            id="expires"
-            placeholder="" value="YYYY-MM-DD"
-            name="expires" required>
-        </div>
-
-     <br>
-
-       </div>
-    </div>
-
-    <div class="wrapper">
-
-      <form class="form" method="POST">
-        <p>Enter valid information about yorself and fill out the survey</p>
-   
-            <div class="survey">
-
-                <p>Please select an option</p>
-                <div class="choice">
-
-                    <ul class="opt1">
-                        <li>Multiple Choice</li>
-                     </ul>
-                  
-                </div>
-
-                <div class="question1">
-                    <h4>Question 1</h4>
-
-                    <label for="firstoption"></label>
-                    <input type="text" class="form-control"
-                    id="optionfield"
-                    placeholder="Your question"
-                    name="" required>
-
-                    <label for="secondoption"></label>
-                    <input type="text" class="form-control"
-                    id="optionfield"
-                    placeholder="Option 1"
-                    name="" required> 
-
-                     <label for="thirdoption"></label>
-                     <input type="text" class="form-control"
-                     id="optionfield"
-                     placeholder="Option 2"
-                     name="" required>
-
-                     <label for="thirdoption"></label>
-                     <input type="text" class="form-control"
-                     id="optionfield"
-                     placeholder="Option 3"
-                     name="" required>
-
-                     <ul class="option1">
-                         <li>Next</li>
-
-              </div>   
-
-                <div class="question2">
-                    
-                    <h2>Question 2</h2>
-
-                    <label for="firstoption"></label>
-                    <input type="text" class="form-control"
-                    id="optionfield"
-                    placeholder="Your question"
-                    name="" required>
-
-                    <label for="secondoption"></label>
-                    <input type="text" class="form-control"
-                    id="optionfield"
-                    placeholder="Option 1"
-                    name="" required>
-
-                     <label for="thirdoption"></label>
-                     <input type="text" class="form-control"
-                     id="optionfield"
-                     placeholder="Option 2"
-                     name="" required>
-
-                     <label for="thirdoption"></label>
-                     <input type="text" class="form-control"
-                     id="optionfield"
-                     placeholder="Option 3"
-                     name="" required>
-
-                     <ul class="option1">
-                    <ul class="option2">
-                        <li>Next</li>
-
-                    </ul>
-                </div>  
-
-                 <div class="question3">
-                        <h2>Question 3</h2>
-
-                        <label for="firstoption"></label>
-                        <input type="text" class="form-control"
-                        id="optionfield"
-                        placeholder="Your question"
-                        name="" required>
- 
-                        <label for="secondoption"></label>
-                        <input type="text" class="form-control"
-                        id="optionfield"
-                        placeholder="Option 1"
-                        name="" required>
- 
-                         <label for="thirdoption"></label>
-                         <input type="text" class="form-control"
-                         id="optionfield"
-                         placeholder="Option 2"
-                         name="" required>
- 
-                         <label for="thirdoption"></label>
-                         <input type="text" class="form-control"
-                         id="optionfield"
-                         placeholder="Option 3"
-                         name="" required>
-                      <ul class="option1">
-                        <ul class="option3">
-                            <li>last </li>
-                           
-                        </ul>
-                    </div>
-
-                    <!-- short answer section -->
-                     <div class="choice2">
-                        <ul class="opt2">
-                            <li>Short Answers</li>
-                        </ul>
-                     </div>
-
-                     <div class="ans">
-                        <label for="Question">Question</label>
-                        <input type="text" class="form-control"
-                        id="question1"
-                        placeholder="Your question Here"
-                        name="question1" required>
- 
-                        <label for="response"></label>
-                        <input type="text" class="form-control"
-                        id="answer1"
-                        placeholder="Respondant's answer"
-                        name="answer1" required> 
-                     </div>
-
-
-                </div>
-
-               <div class="end">
-                   <h2>Thank you</h2>
-                   <a href="/home"><i class="fas fa-chevron-circle-right"></i> home</a>
-
-               </div>
-           </form>
-           </div>
-
-     </div>
-
-           <div class="wrapper">
-
-            <button class="btn btn-primary" type="submit">
-                <i class="fas fa-edit"></i> Submit</button>
-                 <br>
-               <a href="/survey-app" class="btn btn-warning">
-                               <i class="fas fa-undo"></i> Cancel</a>
-
+<html lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="StyleSheet1.css">
+</head>
+<body>
+    <div id="outside">
+        <form id="survey-form" method="post">
+            <h1 id="title">Create Your Own Survey</h1>
+            <div class="nav-links" id="navlinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+                
+                
             </div>
-     </form>
 
+            <fieldset>
 
-     
-
-     
+                <p><legend>Create a new survey</legend></p>
+                <div>
+                    <label for="msg"></label>
+                    <p>Title of the survey</p>
+                    <input class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter Your Title"
+                    name="name" required>
+                </div>
+                <div>
+                    <label for="msg">Description</label><br>
+                    <input type="text" class="form-control"
+                id="emailTextField"
+                placeholder="Enter the Description"
+                name="email" 
+                required>
+                </div>
+                <fieldset>
+            
+            <div class="question-frame">
+               <fieldset>
+           
+                <div id="question">
+                    <p>Choose question type:</p>
+                    <p><input class="coupon_question" type="checkbox" name="coupon_question" value="1" onchange="valueChanged()"/> Multiple Choice</p>
+                    <p><input class="coupon_question1" type="checkbox" name="coupon_question" value="1" onchange="valueChanged()"/> Short Answer</p>
+                    
+                </div >
+                
+                <div id="ques">
+                    <label for="msg"></label>
+                    <p>Write your question here</p>
+                    <input type="text" class="form-control"
+                id="questionTextField"
+                placeholder="Enter the Question"
+                name="question" 
+                required>
+                
+            <div id="choice">
              
-
-</div>
-</div>
-
+                <label id="neww">Add Choices</label><br>
+                <p id="fir1"><input type="text" id="inp1"  required></p>
+                <p id="fir2"><input type="text" id="inp2"  required></p>
+                <p id="fir3"><input type="text" id="inp3" required></p>
+                
+                <input type="text">
+  <button onclick="add()">Add</button>
+  <button onclick="remove()">remove</button>
+  <div id="new_chq"></div>
+  <input type="hidden" value="1" id="total_chq">
+            </div>
+        </div>
+        <div1></div1>
+        <div id="newone"></div>
+            <div id="choice1">
+                <textarea type="text" rows="2" id="inp6"></textarea>
+            </div>
+            <div class="new-question">
+                <button id="newques" onclick="duplicate()">Add new question</button>
+            </div>
+                                                                
+                </p>
+            </fieldset>
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-paper-plane"></i> Submit</button>
+            <br>
+                <a href="/survey-app" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
+            </div>
+</body>
+</html>
 <br> -->
 
 <%- include ../partials/footer.ejs %>  
