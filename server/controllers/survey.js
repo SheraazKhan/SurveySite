@@ -30,8 +30,18 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newSurvey = Survey({
         "name": req.body.name,
-        "email": req.body.email,
-        "age": req.body.age,
+        "description": req.body.description,
+        "created": req.body.created,
+        "expires": req.body.expires,
+        "question1": req.body.question1,
+        "answer1": req.body.answer1,
+        "question2": req.body.question2,
+        "answer2": req.body.answer2,
+        "question3": req.body.question3,
+        "answer3": req.body.answer3,
+        "question4": req.body.question4,
+        "answer4": req.body.answer4,
+
     });
 
     Survey.create(newSurvey, (err, Survey) => {
@@ -72,9 +82,26 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedSurvey = Survey({
         "_id": id,
         "name": req.body.name,
-        "email": req.body.email,
-        "age": req.body.age
+        "description": req.body.description,
+        "created": req.body.created,
+        "expires": req.body.expires,
+        "question1": req.body.question1,
+        "answer1": req.body.answer1,
+        "question2": req.body.question2,
+        "answer2": req.body.answer2,
+        "question3": req.body.question3,
+        "answer3": req.body.answer3,
+        "question4": req.body.question4,
+        "answer4": req.body.answer4,
+        
+        
     });
+    //survey not accessible if it is expired
+    if(updatedSurvey.expires < Date.now())
+    {
+        res.redirect('/survey-app');
+    }
+   
 
     Survey.updateOne({_id: id}, updatedSurvey, (err) =>{
         if(err)

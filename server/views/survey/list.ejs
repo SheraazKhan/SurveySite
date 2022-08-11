@@ -6,7 +6,7 @@
   <!-- Main Content -->
   <main class="container">
     <div class="row">
-        <div class="offset-md-1 col-md-11">
+        <div class="offset-md-1 col-md-20">
             <br>
             <h1><%= title %></h1>
             <% if(typeof displayName == 'string' && displayName) { %>
@@ -16,31 +16,48 @@
             <% } %>
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
-                <tr class="d-flex">
-                    <th class="text-center col-3">Name</th>
+                <tr class="">
+                    <!-- <th class="text-center col-3">Name</th>
                     <th class="text-center col-3">Email</th>
-                    <th class="text-center col-3">Age</th>
+                    <th class="text-center col-3">Age</th> -->
                     
                     <!-- <th class="text-center col-1"></th>
                     <th class="text-center col-1"></th> -->
+
+                    <th class="text-center">Survey Title</th>
+                    <th class="text-center">Desciption</th>
+                    <th class="text-center"> Date Created</th>
+                    <th class="text-center">Expires</th>
+                    <th class="text-center"> </th>
+                    <th class="text-center"> </th>
                 </tr>
 
                 <!-- Repeatable Template Row -->
 
                 <% for(let count = 0; count < SurveyList.length; count++) { %>
-                    <tr class="d-flex">
+                    <tr class="">
+                        <% if(typeof displayName == 'string' && displayName) { %>
                         <td class="text-center col-3"><%= SurveyList[count].name %></td>
-                        <td class="text-center col-3"><%= SurveyList[count].email %></td>
-                        <td class="text-center col-3"><%= SurveyList[count].age %></td>
+                        <td class="text-center col-3"><%= SurveyList[count].description %></td>
+                        <td class="text-center col-3"><%= SurveyList[count].created %></td>
+                        <td class="text-center col-3"><%= SurveyList[count].expires %></td>
+                       
                         <br>
-                        <td class="text-center col-1">
+                        <td class="text-center ">
                             <a href="/survey-app/edit/<%= SurveyList[count]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i> Edit</a>
                         </td>
-                        <td class="text-center col-1">
+                        <td class="text-center">
                             <a href="/survey-app/delete/<%= SurveyList[count]._id %>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i> Delete</a>
                         </td>
+                        <% } else { %>
+                        <td class="text-center col-3"><%= SurveyList[count].name %></td>
+                        <td class="text-center col-3"><%= SurveyList[count].description %></td>
+                        <td class="text-center col-3"><%= SurveyList[count].created %></td>
+                        <td class="text-center col-3"><%= SurveyList[count].expires %></td>
+                        <% } %>
+
                         <td class="text-center col-1">
                             <a href="" class="btn btn-success btn-sm">
                             <i class="fas fa-plus"></i> Take Survey</a>

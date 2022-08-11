@@ -9,75 +9,49 @@
        <div class="offset -md-3 col-md-6">
         <h1><%= title %></h1>
         <div><h6>survey information</h6></div>
-        <div><label for="start">Start date:</label>
-
-            <input type="date" id="start" name="trip-start"
-            value="YYYY-MM-DD"
-            min="2022-01-01" max="2025-12-31"></div>
-
-
-        <div><label for="end">End date:</label>
-
-            <input type="date" id="end" name="trip-end"
-            value="YYYY-MM-DD"
-            min="2022-01-01" max="2025-12-31"></div>
+        <p>Enter valid information to create a survey</p>
         
-       
+        <div>
+            <label for="name">Name of Survey</label>
+            <input type="text" class="form-control"
+            id="name"
+            placeholder="Enter Name of Survey"
+            name="name" required>
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <textarea type="text" class="form-control"
+            id="description"
+            name="description" required></textarea>
+        </div>
+
+        <div>
+            <label for="created">Created on:</label>
+            <input type="date" class="form-control"
+            id="created"
+            placeholder="" value="YYYY-MM-DD"
+            name="created" required>
+        </div>
+
+        <div>
+            <label for="expires">Expires on:</label>
+            <input type="date" class="form-control"
+            id="expires"
+            placeholder="" value="YYYY-MM-DD"
+            name="expires" required>
+        </div>
+
      <br>
 
        </div>
     </div>
 
-
     <div class="wrapper">
+
       <form class="form" method="POST">
         <p>Enter valid information about yorself and fill out the survey</p>
-            <div class="form-group">
-                <label for="nameTextField"></label>
-                <input type="text" class="form-control"
-                id="nameTextField"
-                placeholder="Enter Your Name"
-                name="name" required>
-            </div>
-
-            <div  class="form-group">
-                <label for="emailTextField"></label>
-                <input type="email" class="form-control"
-                id="emailTextField"
-                placeholder="Enter Your email"
-                name="email" 
-                required>
-            </div>
-
-            <div class="form-group">
-                <label for="ageTextField"></label>
-                <input type="number" name = "age" min="10" max="99" class="form-control"
-                id="ageTextField"
-                placeholder="Enter Your Age"
-                name="age" 
-                required>
-            </div>
-
-            <div class="form-group">
-                <label for="dropdown">
-                    <p>Describe your role?</p>
-                </label>
-                <select class="form-control" id="dropdown" name="dropdown" required>
-                    <option disabled> Select role </option>
-                    <option value="student">Student</option>
-                    <option value="full">Full-Time Job </option>
-                    <option value="part">Part-Time Job</option>
-                    <option value="other">Other</option>
-                </select>
-
-            </div>
-
-            <div class="form-group">
-                <label for="description">Description</label>
-                <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-                
-            </div>
-
+   
             <div class="survey">
 
                 <p>Please select an option</p>
@@ -89,112 +63,107 @@
                   
                 </div>
 
-                
-               
-                 <div class="question1">
-                       <h4>Question 1</h4>
+                <div class="question1">
+                    <h4>Question 1</h4>
 
-                       <label for="firstoption"></label>
-                       <input type="text" class="form-control"
-                       id="optionfield"
-                       placeholder="Your question"
-                       name="" required>
+                    <label for="firstoption"></label>
+                    <input type="text" class="form-control"
+                    id="optionfield"
+                    placeholder="Your question"
+                    name="" required>
 
-                       <label for="secondoption"></label>
-                       <input type="text" class="form-control"
-                       id="optionfield"
-                       placeholder="Option 1"
-                       name="" required> 
+                    <label for="secondoption"></label>
+                    <input type="text" class="form-control"
+                    id="optionfield"
+                    placeholder="Option 1"
+                    name="" required> 
 
-                        <label for="thirdoption"></label>
+                     <label for="thirdoption"></label>
+                     <input type="text" class="form-control"
+                     id="optionfield"
+                     placeholder="Option 2"
+                     name="" required>
+
+                     <label for="thirdoption"></label>
+                     <input type="text" class="form-control"
+                     id="optionfield"
+                     placeholder="Option 3"
+                     name="" required>
+
+                     <ul class="option1">
+                         <li>Next</li>
+
+              </div>   
+
+                <div class="question2">
+                    
+                    <h2>Question 2</h2>
+
+                    <label for="firstoption"></label>
+                    <input type="text" class="form-control"
+                    id="optionfield"
+                    placeholder="Your question"
+                    name="" required>
+
+                    <label for="secondoption"></label>
+                    <input type="text" class="form-control"
+                    id="optionfield"
+                    placeholder="Option 1"
+                    name="" required>
+
+                     <label for="thirdoption"></label>
+                     <input type="text" class="form-control"
+                     id="optionfield"
+                     placeholder="Option 2"
+                     name="" required>
+
+                     <label for="thirdoption"></label>
+                     <input type="text" class="form-control"
+                     id="optionfield"
+                     placeholder="Option 3"
+                     name="" required>
+
+                     <ul class="option1">
+                    <ul class="option2">
+                        <li>Next</li>
+
+                    </ul>
+                </div>  
+
+                 <div class="question3">
+                        <h2>Question 3</h2>
+
+                        <label for="firstoption"></label>
                         <input type="text" class="form-control"
                         id="optionfield"
-                        placeholder="Option 2"
+                        placeholder="Your question"
                         name="" required>
-
-                        <label for="thirdoption"></label>
+ 
+                        <label for="secondoption"></label>
                         <input type="text" class="form-control"
                         id="optionfield"
-                        placeholder="Option 3"
+                        placeholder="Option 1"
                         name="" required>
+ 
+                         <label for="thirdoption"></label>
+                         <input type="text" class="form-control"
+                         id="optionfield"
+                         placeholder="Option 2"
+                         name="" required>
+ 
+                         <label for="thirdoption"></label>
+                         <input type="text" class="form-control"
+                         id="optionfield"
+                         placeholder="Option 3"
+                         name="" required>
+                      <ul class="option1">
+                        <ul class="option3">
+                            <li>last </li>
+                           
+                        </ul>
+                    </div>
 
-                        <ul class="option1">
-                            <li>Next</li>
-
-                 </div>   
-               
-                        
-               
-                   <div class="question2">
-                       
-                       <h2>Question 2</h2>
-
-                       <label for="firstoption"></label>
-                       <input type="text" class="form-control"
-                       id="optionfield"
-                       placeholder="Your question"
-                       name="" required>
-
-                       <label for="secondoption"></label>
-                       <input type="text" class="form-control"
-                       id="optionfield"
-                       placeholder="Option 1"
-                       name="" required>
-
-                        <label for="thirdoption"></label>
-                        <input type="text" class="form-control"
-                        id="optionfield"
-                        placeholder="Option 2"
-                        name="" required>
-
-                        <label for="thirdoption"></label>
-                        <input type="text" class="form-control"
-                        id="optionfield"
-                        placeholder="Option 3"
-                        name="" required>
-
-                        <ul class="option1">
-                       <ul class="option2">
-                           <li>Next</li>
-                         
-
-                       </ul>
-                   </div>  
-
-                    <div class="question3">
-                           <h2>Question 3</h2>
-
-                           <label for="firstoption"></label>
-                           <input type="text" class="form-control"
-                           id="optionfield"
-                           placeholder="Your question"
-                           name="" required>
-    
-                           <label for="secondoption"></label>
-                           <input type="text" class="form-control"
-                           id="optionfield"
-                           placeholder="Option 1"
-                           name="" required>
-    
-                            <label for="thirdoption"></label>
-                            <input type="text" class="form-control"
-                            id="optionfield"
-                            placeholder="Option 2"
-                            name="" required>
-    
-                            <label for="thirdoption"></label>
-                            <input type="text" class="form-control"
-                            id="optionfield"
-                            placeholder="Option 3"
-                            name="" required>
-                         <ul class="option1">
-                           <ul class="option3">
-                               <li>last </li>
-                              
-                           </ul>
-                       </div>
-
-
+                    <!-- short answer section -->
                      <div class="choice2">
                         <ul class="opt2">
                             <li>Short Answers</li>
@@ -202,21 +171,19 @@
                      </div>
 
                      <div class="ans">
-                        <label for="yourquestion"></label>
+                        <label for="Question">Question</label>
                         <input type="text" class="form-control"
-                        id="optionfield"
+                        id="question1"
                         placeholder="Your question Here"
-                        name="" required>
+                        name="question1" required>
  
-                        <label for="participant"></label>
+                        <label for="response"></label>
                         <input type="text" class="form-control"
-                        id="optionfield"
-                        placeholder="Participant's answer"
-                        name="" required> 
+                        id="answer1"
+                        placeholder="Respondant's answer"
+                        name="answer1" required> 
                      </div>
 
-
-    
 
                 </div>
 
@@ -228,28 +195,29 @@
            </form>
            </div>
 
-           
-
      </div>
 
-                      <div class="wrapper">
+           <div class="wrapper">
 
-                       <button class="btn btn-primary" type="submit">
-                           <i class="fas fa-paper-plane"></i> Submit</button>
-                       <br>
-                           <a href="/survey-app" class="btn btn-warning">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-edit"></i> Submit</button>
+                 <br>
+               <a href="/survey-app" class="btn btn-warning">
                                <i class="fas fa-undo"></i> Cancel</a>
-                       </div>
-    </form>
-            
+
+            </div>
+     </form>
+
+
+     
+
+     
+             
 
 </div>
+</div>
 
-      
-
-<br>
-
-  
+<br> -->
 
 <%- include ../partials/footer.ejs %>  
 
